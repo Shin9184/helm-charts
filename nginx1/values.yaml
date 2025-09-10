@@ -1,0 +1,16 @@
+name: nginx1
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: ""
+
+deployment:
+  containerPort: 80
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
