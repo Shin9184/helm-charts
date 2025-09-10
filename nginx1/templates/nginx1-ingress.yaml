@@ -15,7 +15,7 @@ metadata:
     alb.ingress.kubernetes.io/security-groups: sg-04c34723d370e7a6d
 
     # ALB Listener 설정
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
 spec:
   rules:
     - http:
@@ -26,4 +26,4 @@ spec:
               service:
                 name: {{ .Values.name }}-service
                 port:
-                  number: 80
+                  number: {{ $.Values.service.port }}
